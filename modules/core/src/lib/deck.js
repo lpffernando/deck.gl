@@ -127,6 +127,7 @@ const defaultProps = {
 export default class Deck {
   constructor(props) {
     props = Object.assign({}, defaultProps, props);
+    this.props = {};
 
     this.width = 0; // "read-only", auto-updated from canvas
     this.height = 0; // "read-only", auto-updated from canvas
@@ -144,7 +145,7 @@ export default class Deck {
     // This object is reused for subsequent `onClick` and `onDrag*` callbacks.
     this._lastPointerDownInfo = null;
 
-    this.viewState = props.initialViewState || null; // Internal view state if no callback is supplied
+    this.viewState = null; // Internal view state if no callback is supplied
     this.interactiveState = {
       isDragging: false // Whether the cursor is down
     };
@@ -241,6 +242,7 @@ export default class Deck {
     }
   }
 
+  /* eslint-disable complexity */
   setProps(props) {
     this.stats.get('setProps Time').timeStart();
 
@@ -249,6 +251,10 @@ export default class Deck {
     }
     if ('onLayerClick' in props) {
       log.removed('onLayerClick', 'onClick')();
+    }
+    if (props.initialViewState && this.props.initialViewState !== props.initialViewState) {
+      // Overwrite internal view state
+      this.viewState = props.initialViewState;
     }
 
     props = Object.assign({}, this.props, props);
@@ -298,6 +304,7 @@ export default class Deck {
 
     this.stats.get('setProps Time').timeEnd();
   }
+  /* eslint-enable complexity */
 
   // Public API
   // Check if a redraw is needed
