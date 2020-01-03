@@ -66,6 +66,24 @@ Group of related RFCs loosely targeted for 7.x releases.
 | [**Binary Support Improvements**](/dev-docs/v7.x-binary/chunked-data-rfc.md) | @pessimistress | **Draft** | API change for more intuitive binary data usage. |
 
 
+## v8.x RFCs
+
+RFCs loosely targeted for 7.x releases. Also see [luma.gl RFCs](https://github.com/uber/luma.gl/tree/master/dev-docs/RFCs#v7x-rfcs)
+
+| RFC | Author | Status | Description |
+| --- | ---    | ---    | ---         |
+| [**pydeck Extension RFC**](vNext/pydeck-extension-rfc.md) | @ajduberstein @ibgreen | **Draft** | Enable additional layer modules to be used with `pydeck`. |
+
+
+## v8.0 RFCs
+
+These RFCS were implemented in v8.0.
+
+| RFC | Author | Status | Description |
+| --- | ---    | ---    | ---         |
+| [**JSON Converter Keywords**](/dev-docs/v8.0/json-converter-keywords-rfc.md) | @ajduberstein | **Implpemented** | API change for more intuitive binary data usage. |
+
+
 ## v7.x RFCs
 
 RFCs loosely targeted for 7.x releases. Also see [luma.gl RFCs](https://github.com/uber/luma.gl/tree/master/dev-docs/RFCs#v7x-rfcs)
